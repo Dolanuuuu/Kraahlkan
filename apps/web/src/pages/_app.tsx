@@ -4,7 +4,6 @@ import "~/utils/i18n";
 import type { NextPage, Viewport } from "next";
 import type { AppProps, AppType } from "next/app";
 import type { ReactElement, ReactNode } from "react";
-import { Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import { env } from "next-runtime-env";
 import { ThemeProvider } from "next-themes";
@@ -19,10 +18,8 @@ import { ModalProvider } from "~/providers/modal";
 import { PopupProvider } from "~/providers/popup";
 import { api } from "~/utils/api";
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  display: "swap",
-});
+// System font stack - no external network required
+const jakarta = { style: { fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" } };
 
 export const metadata = {
   title: "Kan",
